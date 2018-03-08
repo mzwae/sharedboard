@@ -8,5 +8,5 @@ define("DB_NAME", "sharedboard");
 
 
 // Define URLs
-define("DB_PATH", "/");
-define("DB_URL", "http://localhost:8080/sharedboard");
+define("ROOT_PATH", "/");
+define("ROOT_URL", "http://localhost:8080/sharedboard/");
