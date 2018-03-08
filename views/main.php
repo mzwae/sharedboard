@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Sharedboard</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?=ROOT_URL?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=ROOT_URL?>assets/css/style.css">
   </head>
   <body>
   <nav class="navbar navbar-default" role="navigation">
@@ -45,5 +45,10 @@
       <?php require($view); ?>
     </div>
   </div>
-  </body>
+<script>
+CKEDITOR.replace('postEditor');
+</script>
+</body>
+<hr>
+<footer class="text-primary text-center"> MZ &copy; <?=date("Y")?></footer>
 </html>
