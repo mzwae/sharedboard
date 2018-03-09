@@ -3,7 +3,7 @@
     <h3 class="panel-title">Share Something!</h3>
   </div>
   <div class="panel-body">
-    <form class="" action="index.html" method="post">
+    <form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
       <div class="form-group">
         <label>Share Title</label>
         <input type="text" name="title" class="form-control">

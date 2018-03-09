@@ -1,5 +1,5 @@
 <div>
-  <a href="<?=ROOT_URL?>shares" class="btn btn-success btn-share">Share something</a>
+  <a href="<?=ROOT_URL?>shares/add" class="btn btn-success btn-share">Share something</a>
 
   <?php foreach($viewmodel as $item) : ?>
     <div class="well">
