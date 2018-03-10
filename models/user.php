@@ -15,7 +15,7 @@ class UserModel extends Model
         $this->query('INSERT INTO users (name, email, password) VALUES (:name, :email, :password)');
         $this->bind(':name', $post['name']);
         $this->bind(':email', $post['email']);
-        $this->bind(':password', $post['password']);
+        $this->bind(':password', $password);
         $this->execute();
 
         // Verify
@@ -23,6 +23,32 @@ class UserModel extends Model
           // Redirect
           header('Location: ' . ROOT_URL . 'users/login');
         }
+      }
+
+      return;
+    }
+
+    public function login(){
+      // Sanitize POST
+      $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+      $password = md5($post['password']);
+
+      if ($post['submit']) {
+        // Check user credentials
+        $this->query('SELECT * FROM users WHERE email = :email AND password = :password');
+        $this->bind(':email', $post['email']);
+        $this->bind(':password', $password);
+
+        $row = $this->single();
+
+        if ($row) {
+          echo "Logged in";
+        } else {
+          echo "Incorrect Login";
+        }
+
+
       }
 
       return;
