@@ -1,7 +1,8 @@
 <div>
-  <a href="<?=ROOT_URL?>shares/add" class="btn btn-success btn-share">Share something</a>
-
-  <?php foreach($viewmodel as $item) : ?>
+  <?php if (isset($_SESSION['is_logged_in'])): ?>
+    <a href="<?=ROOT_URL?>shares/add" class="btn btn-success btn-share">Share something</a>
+  <?php endif; ?>
+  <?php foreach ($viewmodel as $item) : ?>
     <div class="well">
       <h3><?=$item['title']?></h3>
       <small><?=$item['create_date']?></small>
