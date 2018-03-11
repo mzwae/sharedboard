@@ -1,5 +1,8 @@
 <?php
+// Start session
+session_start();
 
+// Requires files
 require('config.php');
 require('classes/Bootstrap.php');
 require('classes/Controller.php');

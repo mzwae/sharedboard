@@ -33,8 +33,17 @@
           <button type="submit" class="btn btn-default">Submit</button>
         </form> -->
         <ul class="nav navbar-nav navbar-right">
+          <?php if(isset($_SESSION['is_logged_in'])):?>
+          <li>
+            <a href="<?=ROOT_URL?>users/login">
+              Welcome <?=$_SESSION['user_data']['name']?>
+            </a>
+          </li>
+          <li><a href="<?=ROOT_URL?>users/logout">Logout</a></li>
+        <?php else: ?>
           <li><a href="<?=ROOT_URL?>users/login">Login</a></li>
           <li><a href="<?=ROOT_URL?>users/register">Register</a></li>
+        <?php endif; ?>
 
         </ul>
       </div><!-- /.navbar-collapse -->
